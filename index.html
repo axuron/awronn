@@ -1,265 +1,231 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>  <html lang="tr">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Auron</title>  <link rel="preconnect" href="https://fonts.googleapis.com">  
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">  <style>  
+*{  
+  margin:0;  
+  padding:0;  
+  box-sizing:border-box;  
+}  
+  
+body{  
+  height:100vh;  
+  overflow:hidden;  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+  background:#04060b;  
+  color:#fff;  
+  font-family:'Montserrat',sans-serif;  
+  position:relative;  
+}  
+  
+.bg{  
+  position:absolute;  
+  inset:-20%;  
+  background:  
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 20%),  
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 20%),  
+    linear-gradient(  
+      120deg,  
+      rgba(255,255,255,.03),  
+      transparent,  
+      rgba(255,255,255,.02),  
+      transparent  
+    );  
+  filter:blur(60px);  
+  animation:bgMove 18s ease-in-out infinite alternate;  
+}  
+  
+@keyframes bgMove{  
+  from{  
+    transform:translate(-40px,-20px) scale(1);  
+  }  
+  to{  
+    transform:translate(40px,20px) scale(1.08);  
+  }  
+}  
+  
+.smoke{  
+  position:absolute;  
+  width:200%;  
+  height:200%;  
+  background:  
+    repeating-linear-gradient(  
+      120deg,  
+      rgba(255,255,255,.03) 0px,  
+      transparent 80px,  
+      rgba(255,255,255,.02) 160px  
+    );  
+  opacity:.3;  
+  filter:blur(14px);  
+  animation:smoke 25s linear infinite;  
+}  
+  
+@keyframes smoke{  
+  from{  
+    transform:translateX(0);  
+  }  
+  to{  
+    transform:translateX(-200px);  
+  }  
+}  
+  
+.stars span{  
+  position:absolute;  
+  width:2px;  
+  height:2px;  
+  background:white;  
+  border-radius:50%;  
+  opacity:.5;  
+  animation:blink 4s infinite;  
+}  
+  
+@keyframes blink{  
+  0%,100%{  
+    opacity:.2;  
+  }  
+  50%{  
+    opacity:.9;  
+  }  
+}  
+  
+.container{  
+  position:relative;  
+  z-index:2;  
+  text-align:center;  
+}  
+  
+.top{  
+  font-size:.8rem;  
+  letter-spacing:10px;  
+  color:rgba(255,255,255,.7);  
+  margin-bottom:30px;  
+}  
+  
+.line{  
+  width:180px;  
+  height:1px;  
+  margin:25px auto;  
+  background:linear-gradient(  
+    to right,  
+    transparent,  
+    rgba(255,255,255,.9),  
+    transparent  
+  );  
+  animation:line 4s infinite;  
+}  
+  
+@keyframes line{  
+  0%,100%{  
+    opacity:.3;  
+  }  
+  50%{  
+    opacity:1;  
+  }  
+}  
+  
+h1{  
+  font-size:7rem;  
+  font-weight:300;  
+  letter-spacing:24px;  
+  text-transform:uppercase;  
+  text-shadow:  
+    0 0 10px rgba(255,255,255,.25),  
+    0 0 30px rgba(255,255,255,.08);  
+  animation:float 5s ease-in-out infinite;  
+}  
+  
+@keyframes float{  
+  0%,100%{  
+    transform:translateY(0);  
+  }  
+  50%{  
+    transform:translateY(-6px);  
+  }  
+}  
+  
+.socials{  
+  margin-top:40px;  
+  display:flex;  
+  flex-direction:column;  
+  gap:15px;  
+  align-items:center;  
+}  
+  
+.social{  
+  font-size:.85rem;  
+  letter-spacing:4px;  
+  color:rgba(255,255,255,.7);  
+}  
+  
+.social a{  
+  color:white;  
+  text-decoration:none;  
+  cursor:pointer;  
+}  
+  
+.social a:hover{  
+  opacity:.7;  
+}  
+  
+.arrow{  
+  position:absolute;  
+  left:50%;  
+  bottom:35px;  
+  transform:translateX(-50%);  
+  font-size:2rem;  
+  opacity:.6;  
+  animation:arrow 2s infinite;  
+}  
+  
+@keyframes arrow{  
+  0%,100%{  
+    transform:translateX(-50%) translateY(0);  
+  }  
+  50%{  
+    transform:translateX(-50%) translateY(10px);  
+  }  
+}  
+  
+@media(max-width:768px){  
+  h1{  
+    font-size:3rem;  
+    letter-spacing:10px;  
+  }  
+  
+  .social{  
+    font-size:.7rem;  
+  }  
+}  
+</style>  </head>  <body>  <div class="bg"></div>  
+<div class="smoke"></div>  <div class="stars">  
+  <span style="top:10%;left:20%"></span>  
+  <span style="top:30%;left:80%"></span>  
+  <span style="top:60%;left:10%"></span>  
+  <span style="top:80%;left:70%"></span>  
+  <span style="top:20%;left:50%"></span>  
+  <span style="top:75%;left:40%"></span>  
+</div>  <div class="container">    <div class="top">  
+    En iyisininde İyisiyim Amk :D  
+  </div>    <div class="line"></div>    <h1>AURON</h1>    <div class="line"></div>    <div class="socials">  <div class="social">  
+  INSTAGRAM :  
+  <a href="https://www.instagram.com/axxorxr?stkn=NGNwODF4dDl1em5z"  
+     target="_blank"  
+     rel="noopener noreferrer">  
+    @axxorxr  
+  </a>  
+</div>  
 
-<title>Auron</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  height:100vh;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#04060b;
-  color:#fff;
-  font-family:'Montserrat',sans-serif;
-  position:relative;
-}
-
-.bg{
-  position:absolute;
-  inset:-20%;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 20%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 20%),
-    linear-gradient(
-      120deg,
-      rgba(255,255,255,.03),
-      transparent,
-      rgba(255,255,255,.02),
-      transparent
-    );
-  filter:blur(60px);
-  animation:bgMove 18s ease-in-out infinite alternate;
-}
-
-@keyframes bgMove{
-  from{
-    transform:translate(-40px,-20px) scale(1);
-  }
-  to{
-    transform:translate(40px,20px) scale(1.08);
-  }
-}
-
-.smoke{
-  position:absolute;
-  width:200%;
-  height:200%;
-  background:
-    repeating-linear-gradient(
-      120deg,
-      rgba(255,255,255,.03) 0px,
-      transparent 80px,
-      rgba(255,255,255,.02) 160px
-    );
-  opacity:.3;
-  filter:blur(14px);
-  animation:smoke 25s linear infinite;
-}
-
-@keyframes smoke{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-200px);
-  }
-}
-
-.stars span{
-  position:absolute;
-  width:2px;
-  height:2px;
-  background:white;
-  border-radius:50%;
-  opacity:.5;
-  animation:blink 4s infinite;
-}
-
-@keyframes blink{
-  0%,100%{
-    opacity:.2;
-  }
-  50%{
-    opacity:.9;
-  }
-}
-
-.container{
-  position:relative;
-  z-index:2;
-  text-align:center;
-}
-
-.top{
-  font-size:.8rem;
-  letter-spacing:10px;
-  color:rgba(255,255,255,.7);
-  margin-bottom:30px;
-}
-
-.line{
-  width:180px;
-  height:1px;
-  margin:25px auto;
-  background:linear-gradient(
-    to right,
-    transparent,
-    rgba(255,255,255,.9),
-    transparent
-  );
-  animation:line 4s infinite;
-}
-
-@keyframes line{
-  0%,100%{
-    opacity:.3;
-  }
-  50%{
-    opacity:1;
-  }
-}
-
-h1{
-  font-size:7rem;
-  font-weight:300;
-  letter-spacing:24px;
-  text-transform:uppercase;
-  text-shadow:
-    0 0 10px rgba(255,255,255,.25),
-    0 0 30px rgba(255,255,255,.08);
-  animation:float 5s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-6px);
-  }
-}
-
-.socials{
-  margin-top:40px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  align-items:center;
-}
-
-.social{
-  font-size:.85rem;
-  letter-spacing:4px;
-  color:rgba(255,255,255,.7);
-}
-
-.social a{
-  color:white;
-  text-decoration:none;
-  cursor:pointer;
-}
-
-.social a:hover{
-  opacity:.7;
-}
-
-.arrow{
-  position:absolute;
-  left:50%;
-  bottom:35px;
-  transform:translateX(-50%);
-  font-size:2rem;
-  opacity:.6;
-  animation:arrow 2s infinite;
-}
-
-@keyframes arrow{
-  0%,100%{
-    transform:translateX(-50%) translateY(0);
-  }
-  50%{
-    transform:translateX(-50%) translateY(10px);
-  }
-}
-
-@media(max-width:768px){
-  h1{
-    font-size:3rem;
-    letter-spacing:10px;
-  }
-
-  .social{
-    font-size:.7rem;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="bg"></div>
-<div class="smoke"></div>
-
-<div class="stars">
-  <span style="top:10%;left:20%"></span>
-  <span style="top:30%;left:80%"></span>
-  <span style="top:60%;left:10%"></span>
-  <span style="top:80%;left:70%"></span>
-  <span style="top:20%;left:50%"></span>
-  <span style="top:75%;left:40%"></span>
+<div class="social">  
+  TIKTOK :  
+  <a href="https://www.tiktok.com/@lb8c7"  
+     target="_blank"  
+     rel="noopener noreferrer">  
+    @lb8c7  
+  </a>  
 </div>
 
-<div class="container">
-
-  <div class="top">
-    En İyisininde İyisiyim Amk :D
-  </div>
-
-  <div class="line"></div>
-
-  <h1>AURON</h1>
-
-  <div class="line"></div>
-
-  <div class="socials">
-
-    <div class="social">
-      INSTAGRAM :
-      <a href="https://www.instagram.com/axxorxr?stkn=NGNwODF4dDl1em5z"
-         target="_blank"
-         rel="noopener noreferrer">
-        @axxorxr
-      </a>
-    </div>
-
-    <div class="social">
-      TIKTOK :
-      <a href="https://www.tiktok.com/@lb8c7"
-         target="_blank"
-         rel="noopener noreferrer">
-        @lb8c7
-      </a>
-    </div>
-
-  </div>
-
-</div>
-
-<div class="arrow">˅</div>
-
-</body>
-</html>
+  </div>  </div>  <div class="arrow">˅</div>  </body>  
+</html> 
